@@ -148,8 +148,9 @@ def big_shoe_rebounds
           if compare_shoe > largest_shoe
             largest_shoe = compare_shoe
             player_with_largest_shoe = name
+            rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
           end
-          rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
+
 
         end
 
