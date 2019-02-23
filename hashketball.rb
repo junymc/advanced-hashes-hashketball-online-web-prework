@@ -124,12 +124,12 @@ def big_shoe_rebounds
   game_hash.each do |location, team_data|
     team_data[:players].each do |player, data|
       data.each do |s, score|
+        binding.pry
         data.max_by do |s, score|
            if(s.to_s === 'shoe')
               score
            end
         end
-        binding.pry
       end
     end
   end
