@@ -150,7 +150,6 @@ def big_shoe_rebounds
             player_with_largest_shoe = name
             rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
           end
-
         end
       end
     end
