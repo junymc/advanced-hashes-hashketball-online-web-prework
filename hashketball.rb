@@ -69,14 +69,66 @@ def shoe_size(player_name)
 end
 
 def team_colors(team_name)
-team_colors =[]
+team_colors = nil
   game_hash.each do |location, team_data|
     team_data.each do |data, names|
       if(names.to_s === team_name)
-       team_colors << location[:colors].to_s
-       binding.pry
+       team_colors = game_hash[location][:colors]
      end
     end
   end
   team_colors
 end
+
+def team_names
+  team = []
+  game_hash.each do |location, team_data|
+    team << game_hash[location][:team_name]
+  end
+  team
+end
+
+def player_numbers(team_name)
+  numbers = []
+  game_hash.each do |location, team_data|
+    team_data.each do |data, names|
+      if(names.to_s === team_name)
+        team_data[:players].each do |player, data|
+          data.each do |s, score|
+           if(s.to_s === 'number')
+             numbers << score
+           end
+          end
+        end
+       end
+     end
+   end
+  numbers
+end
+
+def player_stats(player_name)
+ stats = {}
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player, data|
+      if(player.to_s === player_name)
+        data.each do |s, score|
+          stats[s] = score
+        end
+      end
+    end
+  end
+  stats
+end
+
+def big_shoe_rebounds
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player, data|
+      data.each do |s, score|
+        if(s.to_s === 'shoe')
+         data.max_by{|s, score| score}
+        end
+      end
+    end
+  end  
+end
+  
