@@ -125,7 +125,8 @@ def big_shoe_rebounds
     team_data[:players].each do |player, data|
       data.each do |s, score|
         if(s.to_s === 'shoe')
-         data.max_by do |s, score| score
+         data.max_by do |s|
+           binding.pry 
          end
         end
       end
