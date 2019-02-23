@@ -1,8 +1,10 @@
-def game_hash(hash)
+require 'pry'
+
+def game_hash
 hash = {
      :home => {
        :team_name => "Brooklyn Nets",
-       :colors => ["Black", "White"]
+       :colors => ["Black", "White"],
        :players => {"Alan Anderson" => {:number => 0, :shoe => 16, :points => 22, :rebounds => 12,
                                       :assists => 12, :steals => 3, :blocks => 1, :slam_dunks => 1},
                     "Reggie Evans" => {:number => 30, :shoe => 14, :points => 12, :rebounds => 12,
@@ -15,13 +17,13 @@ hash = {
                                      :assists => 2, :steals => 4, :blocks => 11, :slam_dunks => 1}
 
                     }
-              }
+              },
      :away => {
        :team_name => "Charlotte Hornets",
        :colors => ["Turquoise", "Purple"],
        :players => {"Jeff Adrien" => {:number => 4, :shoe => 18, :points => 10, :rebounds => 1,
                                      :assists => 1, :steals => 2, :blocks => 7, :slam_dunks => 2},
-                    "Bismak Biyombo" => {:number 0, :shoe => 16, :points => 12, :rebounds => 4,
+                    "Bismak Biyombo" => {:number => 0, :shoe => 16, :points => 12, :rebounds => 4,
                                         :assists => 7, :steals => 7, :blocks => 15, :slam_dunks => 10},
                     "DeSagna Diop" => {:number => 2, :shoe => 14, :points => 24, :rebounds => 12,
                                       :assists => 12, :steals => 4, :blocks => 5, :slam_dunks => 5},
@@ -32,4 +34,49 @@ hash = {
                    }
               }
         }
+end
+
+def num_points_scored(player_name)
+  points_p = nil
+   game_hash.each do |location, team_data|
+     team_data[:players].each do |player, data|
+       if(player.to_s === player_name)
+         data.each do |s, score|
+            if(s.to_s === 'points')
+              points_p = score
+            end
+         end
+       end
+     end
+   end
+   points_p
 end# Write your code here!
+
+def shoe_size(player_name)
+  size = nil
+   game_hash.each do |location, team_data|
+     team_data[:players].each do |player, data|
+       if(player.to_s === player_name)
+         data.each do |s, score|
+           if(s.to_s === 'shoe')
+             size = score
+           end
+         end
+       end
+     end
+   end
+   size
+end
+
+def team_colors(team_name)
+team_colors =[]
+  game_hash.each do |location, team_data|
+    team_data.each do |data, names|
+      if(names.to_s === team_name)
+       team_colors << location[:colors].to_s
+       binding.pry
+     end
+    end
+  end
+  team_colors
+end
