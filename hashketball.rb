@@ -147,7 +147,7 @@ def big_shoe_rebounds
 
           if compare_shoe > largest_shoe
             largest_shoe = compare_shoe
-            binding.pry
+            player_with_largest_shoe = name
           end
         end
       end
