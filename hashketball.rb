@@ -143,7 +143,11 @@ def big_shoe_rebounds
     team_data[:players].each do |name, stats|
       stats.each do |stat_name, value|
         if(stat_name.to_s === "shoe")
-          binding.pry
+          compare_shoe = value
+
+          if compare_shoe > largest_shoe
+            largest_shoe = compare_shoe
+          end
         end
       end
     end
