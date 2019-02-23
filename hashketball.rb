@@ -128,7 +128,6 @@ def big_shoe_rebounds
            if(s.to_s === 'shoe')
   binding.pry
            end
-
         end
       end
     end
