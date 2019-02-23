@@ -150,7 +150,6 @@ def big_shoe_rebounds
             player_with_largest_shoe = name
           end
           rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
-rs][name][:rebounds]
 binding.pry
         end
 
