@@ -144,7 +144,7 @@ def big_shoe_rebounds
       stats.each do |stat_name, value|
         # if(stat_name.to_s === "shoe")
         #   compare_shoe = value
-        # 
+        #
         #   if compare_shoe > largest_shoe
         #     largest_shoe = compare_shoe
         #     player_with_largest_shoe = name
