@@ -151,7 +151,7 @@ def big_shoe_rebounds
           end
           binding.pry
         end
-        
+
         if stat_name.to_s === "rebounds"
           rebounds = value
         end
