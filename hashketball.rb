@@ -137,7 +137,7 @@ def big_shoe_rebounds
   compare_shoe = 0
   largest_shoe = 0
   player_with_largest_shoe = ""
-  rebounds = nil
+  rebounds = 0
 
   game_hash.each do |location, team_data|
     team_data[:players].each do |name, stats|
@@ -151,11 +151,7 @@ def big_shoe_rebounds
             rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
           end
 
-
         end
-
-
-
       end
     end
   end
