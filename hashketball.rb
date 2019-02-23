@@ -149,12 +149,12 @@ def big_shoe_rebounds
             largest_shoe = compare_shoe
             player_with_largest_shoe = name
           end
-          binding.pry
+          rebounds = team_data[:players][player_with_largest_shoe][:rebounds]
+rs][name][:rebounds]
+binding.pry
         end
 
-        if stat_name.to_s === "rebounds"
-          rebounds = value
-        end
+        
 
       end
     end
